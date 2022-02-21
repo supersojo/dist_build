@@ -1,0 +1,3 @@
+# intro
+build openvpn with cross toolchain.
+Note openvpn needs lzo and openssl.

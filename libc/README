@@ -1,0 +1,20 @@
+# build libc with gcc
+- kernel headers
+- gcc 
+- The GNU C Library cannot be compiled in the source directory. You must build it in a separate build directory
+
+# steps
+
+## download glibc source code
+
+## configure glibc
+```
+# for native build
+cd glibc_build
+../glibc_src/configure --prefix=$GLIBC_INSTALL_DIR --with-headers=$KERNEL_HEADERS 
+```
+
+# references
+1. https://www.gnu.org/software/libc/manual/html_mono/libc.html#Installation
+
+

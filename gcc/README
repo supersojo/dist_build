@@ -1,0 +1,33 @@
+# prepare stuff for gcc
+
+gcc needs some libraries for build process.
+
+- GMP
+  GMP is the GNU Multiple Precision Arithmetic Library
+
+- MPFR
+  MPFR is the GNU Multiple-precision floating-point rounding library
+
+- MPC
+  MPC is the GNU Multiple-precision C library. It depends on GMP and MPFR
+
+- ELF
+  ELF stands for Executable and Linkable Format. This library provides architecture-independent size and endian support
+
+- GCC
+  GCC is the GNU Compiler Collection
+
+To compile gcc we need c library and the header files(It's not the truth. We can build a first stage gcc(bootstrap gcc) without headers then use the
+first stage gcc to compile the glibc(only bootstrap or headers). So First we build libc with existed gcc, then using the built libc to
+built our gcc.
+
+To compile libc we need kernel headers. So first we build kernel with existed gcc, then we get kernel headers ot be used for libc.
+
+
+# references
+
+1. https://stackoverflow.com/questions/9450394/how-to-install-gcc-piece-by-piece-with-gmp-mpfr-mpc-elf-without-shared-libra
+2. https://gcc.gnu.org/install/prerequisites.html
+3. https://crosstool-ng.github.io/docs/toolchain-construction
+4. https://gist.github.com/chponte/7f27967fc72cf61e8c158923bf126b61
+5. https://preshing.com/20141119/how-to-build-a-gcc-cross-compiler/

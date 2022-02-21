@@ -1,0 +1,8 @@
+# build binutils
+The build_binutils.sh default build for powerpc.
+
+This is the first stage for build crosschain.
+
+# directories
+It will build binutils in build and install in install.
+
